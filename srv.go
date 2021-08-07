@@ -17,7 +17,5 @@ func Index(w http.ResponseWriter, r *http.Request) {
 
 func main() {
         http.HandleFunc("/", Index)
-        //http.ListenAndServe(":9090", nil)
-        //http.ListenAndServe(":9090", http.FileServer("index.html"))
         http.ListenAndServe(":9090", http.FileServer(http.Dir("static")))
 }
